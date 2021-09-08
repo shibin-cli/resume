@@ -18,8 +18,8 @@ module.exports = {
             test: /\.css$/,
             use: [MiniCssExtractPlugin.loader, 'css-loader']
         },  {
-            test: /\.(gif|png|jpe?g|eot|woff|ttf|svg|pdf)$/,
-            loader: 'base64-inline-loader',
+            test: /\.(gif|png|jpe?g|eot|woff|ttf|svg)$/,
+            loader: 'url-loader',
           },]
     },
     resolve: {
