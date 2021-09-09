@@ -21,6 +21,6 @@
     "sass": "^1.39.0"
   },
   "dependencies": {
-    "compass-mixins2": "0.0.1"
+    "compass-mixins2": "0.0.2"
   }
 }
