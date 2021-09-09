@@ -14,7 +14,6 @@ const clean = () => {
     return del(['dist'])
 }
 
-// css和sass
 function buildStyles() {
     return gulp.src('./src/**/*.scss')
         .pipe(sass().on('error', sass.logError))
@@ -40,7 +39,6 @@ function minifyHtml() {
 
 
 const bs = borwserSync.create()
-
 const staticServe = () => {
     watch('src/**/*.scss', buildStyles)
     watch('src/*.html', page)
@@ -49,6 +47,7 @@ const staticServe = () => {
         open: false,
         port: '3000',
         files: 'dist/**',
+        ui: false,
         server: {
             baseDir: 'dist',
             routes: {
@@ -69,6 +68,7 @@ const serve = series(
     page,
     staticServe
 )
+
 module.exports = {
     build,
     serve
